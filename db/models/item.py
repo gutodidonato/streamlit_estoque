@@ -7,6 +7,7 @@ class ItemCarrinho(Base):
     __tablename__ = 'item_carrinho'
     
     id = Column(Integer, primary_key=True)
+    item_nome = Column(String)
     preco_unitario = Column(Float)
     quantidade = Column(Integer)
     
@@ -17,6 +18,7 @@ class ItemVenda(Base):
     __tablename__ = 'item_venda'
     
     id = Column(Integer, primary_key=True)
+    item_nome = Column(String)
     preco_unitario = Column(Float)
     quantidade = Column(Integer)
     

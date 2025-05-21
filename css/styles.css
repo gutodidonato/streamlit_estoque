@@ -1,0 +1,22 @@
+/*====================================
+            Tab Navigation
+=====================================*/
+[data-testid="stNavSectionHeader"] {
+    background: #70388e;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    margin: 30px 15px;
+    border-radius: 11px;
+}
+
+[data-testid="stSidebarContent"] {
+    background: linear-gradient(96deg, #131313, #e2e2e252);
+}
+
+/*====================================
+            Produtos
+=====================================*/
+[data-testid="stMarkdownContainer"] p {
+  font-size: 18px;
+}

@@ -2,17 +2,8 @@ import streamlit as st
 
 
 def main():
-    st.markdown("""
-    <style>
-        .st-emotion-cache-1qv137k {
-            background: #ff0000;
-            padding: 10px;
-            color: #ffffff;
-            text-align: center;
-            margin: 30px 30px;
-        }
-    </style>
-""", unsafe_allow_html=True)
+    with open('css/styles.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     
     
     produtos = st.Page(

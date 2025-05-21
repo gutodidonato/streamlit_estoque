@@ -8,9 +8,11 @@ class Material(Base):
     id = Column(Integer, primary_key=True)
     nome = Column(String, nullable=False)
     vendivel = Column(Boolean, default=True)
+    descricao = Column(String)
     
     preco_aquisicao = Column(Float, nullable=True)
     preco_venda = Column(Float, nullable=False)
+    
 
     quantidade = Column(Integer, nullable=False)
     estoque_minimo = Column(Integer, nullable=True)
