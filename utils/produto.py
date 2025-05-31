@@ -2,34 +2,18 @@ import streamlit as st
 
 def gerenciamento_produtos():    
     with st.expander(label="Produto"):
-        cola, colb, colc, cold, cole, colf= st.columns(6)
-        with cola:
-            preco = st.checkbox("preco", value=True)
-        with colb:
-            preco_custo = st.checkbox("custo", value=True)
-        with colc:
-            descricao = st.checkbox("descricao", value=True)
-        with cold:
-            status = st.checkbox("status", value=True)
-        with cole:
-            barra = st.checkbox("barra", value=True)
-        with colf:
-            imagem = st.checkbox("imagem", value=True)
         col1, col2 = st.columns(2)
         with col1:
             st.write("Categoria: Fruta") 
-            if preco:
-                st.write("Preço: R$ 5,00") 
-            if preco_custo:
-                st.write("Preço de custo: R$ 3,00")
-            if descricao:
-                descricao_produto( )
+            st.write("Preço: R$ 5,00") 
+            
+        
+            st.write("Preço de custo: R$ 3,00")
+            descricao_produto( )
         with col2:
-            if imagem:
-                st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-        if barra:
+            st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+        if st.session_state.get('estoque', False):
             barra_progresso(30, 33)
-        if status:
             status_gerenciamento(34, 33, 35)
         
 

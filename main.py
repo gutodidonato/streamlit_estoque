@@ -1,7 +1,11 @@
 import streamlit as st
+from utils.configs import set_options
 
+st.set_page_config(page_title="Resumo de Vendas", layout="wide")
 
 def main():
+    set_options()
+    
     with open('css/styles.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     
@@ -12,7 +16,7 @@ def main():
         title='Produtos e Estoque'
     )
     clientes = st.Page(
-        page='pages/vendas.py',
+        page='pages/contatos.py',
         title='Página de Clientes'
     )
     carrinhos = st.Page(
@@ -20,7 +24,7 @@ def main():
         title='Carrinhos Ativos'
     )
     vendas = st.Page(
-        page='pages/estoques.py',
+        page='pages/vendas.py',
         title='Vendas'
     )
     materiais = st.Page(
@@ -35,6 +39,10 @@ def main():
         page='pages/gastos.py',
         title='Gastos'
     )
+    home = st.Page(
+        page='pages/home.py',
+        title='Página Inicial',
+    )
     
     configuracoes = st.Page(
         page='pages/configs.py',
@@ -42,9 +50,9 @@ def main():
     )
     pg = st.navigation(
         {
+            "Inicio": [home, configuracoes],
             "Vendas": [produtos, clientes, carrinhos, vendas],
             "Materiais": [materiais, producao, gastos],
-            "Configurações": [configuracoes],
         }
     )
     pg.run()
