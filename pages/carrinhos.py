@@ -6,7 +6,7 @@ clientes = {'Pedro': {'nome' : 'Pedro', 'email': 'pedro@xpto.com'},
 
 
 def gerenciamento_carrinhos():
-    st.subheader("Gerenciamento de Carrinhos Ativos")
+    st.title("Gerenciamento de Carrinhos Ativos")
     
     if 'carrinhos' not in st.session_state:
         st.session_state['carrinhos'] = []
